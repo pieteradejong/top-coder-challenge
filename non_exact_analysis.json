@@ -1,0 +1,15 @@
+{
+  "total_non_exact": 932,
+  "error_patterns": {
+    "error_ranges": {
+      "0.01-0.05": 248,
+      "0.05-0.10": 267,
+      "0.10-0.20": 323,
+      "0.20+": 94
+    }
+  },
+  "rounding_patterns": {
+    "expected_49_99": 14,
+    "predicted_49_99": 0
+  }
+}
