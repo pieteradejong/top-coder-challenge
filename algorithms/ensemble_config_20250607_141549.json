@@ -1,0 +1,20 @@
+{
+  "type": "ensemble",
+  "timestamp": "2025-06-07T14:15:49.019721",
+  "components": {
+    "score_based": [
+      "01_current_best",
+      "05_business_rules",
+      "11_weighted_avg"
+    ],
+    "exact_based": [
+      "11_weighted_avg",
+      "01_current_best",
+      "02_pure_inverse"
+    ]
+  },
+  "suggested_weights": {
+    "score_weight": 0.7,
+    "exact_weight": 0.3
+  }
+}

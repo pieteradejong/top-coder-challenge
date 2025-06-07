@@ -1,0 +1,80 @@
+[
+  {
+    "name": "Base: Current Best",
+    "timestamp": "2025-06-07T14:17:27.578884",
+    "performance": {
+      "avg_error": 168.22,
+      "max_error": 1151.61,
+      "exact_matches": 0,
+      "close_matches": 9,
+      "score": 16921.81,
+      "total_cases": 1000
+    },
+    "algorithm_type": "base"
+  },
+  {
+    "name": "Ensemble V1: Weighted",
+    "timestamp": "2025-06-07T14:17:27.583225",
+    "performance": {
+      "avg_error": 227.29,
+      "max_error": 1221.08,
+      "exact_matches": 0,
+      "close_matches": 1,
+      "score": 22828.55,
+      "total_cases": 1000
+    },
+    "algorithm_type": "ensemble"
+  },
+  {
+    "name": "Ensemble V2: Adaptive",
+    "timestamp": "2025-06-07T14:17:27.586142",
+    "performance": {
+      "avg_error": 234.66,
+      "max_error": 1221.08,
+      "exact_matches": 0,
+      "close_matches": 1,
+      "score": 23566.25,
+      "total_cases": 1000
+    },
+    "algorithm_type": "ensemble"
+  },
+  {
+    "name": "Ensemble V3: Median",
+    "timestamp": "2025-06-07T14:17:27.588980",
+    "performance": {
+      "avg_error": 234.77,
+      "max_error": 1322.46,
+      "exact_matches": 0,
+      "close_matches": 6,
+      "score": 23576.5,
+      "total_cases": 1000
+    },
+    "algorithm_type": "ensemble"
+  },
+  {
+    "name": "Base: Business Rules",
+    "timestamp": "2025-06-07T14:17:27.579745",
+    "performance": {
+      "avg_error": 412.98,
+      "max_error": 1502.45,
+      "exact_matches": 0,
+      "close_matches": 5,
+      "score": 41398.15,
+      "total_cases": 1000
+    },
+    "algorithm_type": "base"
+  },
+  {
+    "name": "Base: Weighted Average",
+    "timestamp": "2025-06-07T14:17:27.580518",
+    "performance": {
+      "avg_error": 420.47,
+      "max_error": 1624.04,
+      "exact_matches": 1,
+      "close_matches": 1,
+      "score": 42146.54,
+      "total_cases": 1000
+    },
+    "algorithm_type": "base"
+  }
+]

@@ -1,0 +1,170 @@
+[
+  {
+    "variant_id": "01_current_best",
+    "description": "Current Best (Moderate Penalties)",
+    "timestamp": "2025-06-07T14:14:54.616843",
+    "performance": {
+      "avg_error": 168.22,
+      "max_error": 1151.61,
+      "exact_matches": 0,
+      "close_matches": 9,
+      "score": 16921.81,
+      "total_cases": 1000
+    },
+    "algorithm_source": "variant_01_current_best"
+  },
+  {
+    "variant_id": "02_pure_inverse",
+    "description": "Pure Inverse Relationship",
+    "timestamp": "2025-06-07T14:14:54.617474",
+    "performance": {
+      "avg_error": 746.65,
+      "max_error": 1855.31,
+      "exact_matches": 0,
+      "close_matches": 0,
+      "score": 74765.0,
+      "total_cases": 1000
+    },
+    "algorithm_source": "variant_02_pure_inverse"
+  },
+  {
+    "variant_id": "03_ml_inspired",
+    "description": "ML Feature Engineering",
+    "timestamp": "2025-06-07T14:14:54.618272",
+    "performance": {
+      "avg_error": 1061.64,
+      "max_error": 2221.18,
+      "exact_matches": 0,
+      "close_matches": 0,
+      "score": 106263.76,
+      "total_cases": 1000
+    },
+    "algorithm_source": "variant_03_ml_inspired"
+  },
+  {
+    "variant_id": "04_extreme_simple",
+    "description": "Extreme Simplicity",
+    "timestamp": "2025-06-07T14:14:54.618876",
+    "performance": {
+      "avg_error": 474.88,
+      "max_error": 1664.28,
+      "exact_matches": 0,
+      "close_matches": 4,
+      "score": 47588.29,
+      "total_cases": 1000
+    },
+    "algorithm_source": "variant_04_extreme_simple"
+  },
+  {
+    "variant_id": "05_business_rules",
+    "description": "Heavy Business Rules",
+    "timestamp": "2025-06-07T14:14:54.619764",
+    "performance": {
+      "avg_error": 412.98,
+      "max_error": 1502.45,
+      "exact_matches": 0,
+      "close_matches": 5,
+      "score": 41398.15,
+      "total_cases": 1000
+    },
+    "algorithm_source": "variant_05_business_rules"
+  },
+  {
+    "variant_id": "06_clustering",
+    "description": "Statistical Clustering",
+    "timestamp": "2025-06-07T14:14:54.620484",
+    "performance": {
+      "avg_error": 845.52,
+      "max_error": 2027.92,
+      "exact_matches": 0,
+      "close_matches": 0,
+      "score": 84651.59,
+      "total_cases": 1000
+    },
+    "algorithm_source": "variant_06_clustering"
+  },
+  {
+    "variant_id": "07_exponential",
+    "description": "Exponential Decay",
+    "timestamp": "2025-06-07T14:14:54.621166",
+    "performance": {
+      "avg_error": 2309.66,
+      "max_error": 4309.26,
+      "exact_matches": 0,
+      "close_matches": 0,
+      "score": 231065.71,
+      "total_cases": 1000
+    },
+    "algorithm_source": "variant_07_exponential"
+  },
+  {
+    "variant_id": "08_ratio_based",
+    "description": "Ratio & Efficiency Focus",
+    "timestamp": "2025-06-07T14:14:54.621950",
+    "performance": {
+      "avg_error": 987.79,
+      "max_error": 2545.05,
+      "exact_matches": 0,
+      "close_matches": 0,
+      "score": 98878.98,
+      "total_cases": 1000
+    },
+    "algorithm_source": "variant_08_ratio_based"
+  },
+  {
+    "variant_id": "09_piecewise",
+    "description": "Piecewise Linear",
+    "timestamp": "2025-06-07T14:14:54.622713",
+    "performance": {
+      "avg_error": 546.26,
+      "max_error": 1652.51,
+      "exact_matches": 0,
+      "close_matches": 0,
+      "score": 54725.76,
+      "total_cases": 1000
+    },
+    "algorithm_source": "variant_09_piecewise"
+  },
+  {
+    "variant_id": "10_thresholds",
+    "description": "Hard Thresholds",
+    "timestamp": "2025-06-07T14:14:54.623442",
+    "performance": {
+      "avg_error": 999.67,
+      "max_error": 2133.24,
+      "exact_matches": 0,
+      "close_matches": 1,
+      "score": 100067.36,
+      "total_cases": 1000
+    },
+    "algorithm_source": "variant_10_thresholds"
+  },
+  {
+    "variant_id": "11_weighted_avg",
+    "description": "Weighted Average Models",
+    "timestamp": "2025-06-07T14:14:54.624305",
+    "performance": {
+      "avg_error": 420.47,
+      "max_error": 1624.04,
+      "exact_matches": 1,
+      "close_matches": 1,
+      "score": 42146.54,
+      "total_cases": 1000
+    },
+    "algorithm_source": "variant_11_weighted_avg"
+  },
+  {
+    "variant_id": "12_outlier_robust",
+    "description": "Outlier Robust",
+    "timestamp": "2025-06-07T14:14:54.625063",
+    "performance": {
+      "avg_error": 766.11,
+      "max_error": 2095.3,
+      "exact_matches": 0,
+      "close_matches": 1,
+      "score": 76710.91,
+      "total_cases": 1000
+    },
+    "algorithm_source": "variant_12_outlier_robust"
+  }
+]

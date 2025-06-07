@@ -1,0 +1,124 @@
+[
+  {
+    "timestamp": "2025-06-07T14:04:23.839462",
+    "attempt": 12,
+    "description": "Micro-tuned algorithm with systematic bias correction",
+    "configuration": {
+      "base_rates": {
+        "1_day": 138,
+        "2_day": 108,
+        "3_5_day": 100,
+        "6_7_day": 95,
+        "8_plus_day": 90
+      },
+      "mileage_rates": {
+        "first_500": 0.66,
+        "next_500": 0.45,
+        "beyond_1000": 0.25
+      },
+      "receipt_rates": {
+        "first_200": 0.79,
+        "next_300": 0.6,
+        "beyond_500": 0.4
+      },
+      "efficiency_bonus": {
+        "sweet_spot_range": "180-220 mi/day",
+        "bonus_per_day": 40,
+        "penalty_threshold": 300,
+        "penalty_per_day": -20
+      },
+      "caps": {
+        "1_day": 1500,
+        "2_day": 1700,
+        "3_day": 1600,
+        "4_day": 1750,
+        "5_day": 1850,
+        "6_day": 1900,
+        "7_day": 1950,
+        "8_day": 2000
+      },
+      "bias_correction": 0.995,
+      "fraud_prevention": {
+        "1_day_extreme": 0.3,
+        "4_day_extreme": 0.2,
+        "long_trip_vacation": 0.8
+      }
+    },
+    "performance": {
+      "avg_error": 225.9,
+      "max_error": 1217.1,
+      "exact_matches": 1,
+      "close_matches": 7,
+      "score": 22689.78,
+      "total_cases": 1000
+    },
+    "key_changes": [
+      "Reduced 1-day base rate: 140 \u2192 138",
+      "Reduced 2-day base rate: 110 \u2192 108",
+      "Increased mileage rate: 0.65 \u2192 0.66",
+      "Reduced receipt rate: 0.8 \u2192 0.79",
+      "Added systematic bias correction: 0.995"
+    ]
+  },
+  {
+    "timestamp": "2025-06-07T14:11:38.143237",
+    "attempt": 13,
+    "description": "Moderate penalty adjustments - major score improvement",
+    "configuration": {
+      "base_rates": {
+        "1_day": 138,
+        "2_day": 108,
+        "3_5_day": 100,
+        "6_7_day": 95,
+        "8_plus_day": 90
+      },
+      "mileage_rates": {
+        "first_500": 0.66,
+        "next_500": 0.45,
+        "beyond_1000": 0.25
+      },
+      "receipt_rates": {
+        "first_200": 0.79,
+        "next_300": 0.6,
+        "beyond_500": 0.4
+      },
+      "efficiency_bonus": {
+        "sweet_spot_range": "180-220 mi/day",
+        "bonus_per_day": 40,
+        "penalty_threshold": 300,
+        "penalty_per_day": -20
+      },
+      "caps": {
+        "1_day": 1500,
+        "2_day": 1700,
+        "3_day": 1600,
+        "4_day": 1750,
+        "5_day": 1850,
+        "6_day": 1900,
+        "7_day": 1950,
+        "8_day": 2000
+      },
+      "bias_correction": 0.995,
+      "fraud_prevention": {
+        "1_day_extreme": 0.3,
+        "4_day_extreme": 0.2,
+        "long_trip_vacation": 0.8
+      }
+    },
+    "performance": {
+      "avg_error": 179.59,
+      "max_error": 1151.61,
+      "exact_matches": 0,
+      "close_matches": 7,
+      "score": 18059.16,
+      "total_cases": 1000
+    },
+    "key_changes": [
+      "Added moderate vacation penalties: 12+ days get 25% reduction",
+      "Receipt fraud prevention: >$2,000 gets 30% penalty on excess",
+      "Efficiency penalties: <30 mi/day gets $20/day penalty",
+      "Graduated bias correction: 8+ days (4%), 12+ days (8%)",
+      "Conservative approach to avoid over-penalization"
+    ]
+  }
+]

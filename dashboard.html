@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legacy Reimbursement System - Live Dashboard</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 20px; background: #f5f5f5; }
+        .container { max-width: 1400px; margin: 0 auto; background: white; border-radius: 10px; padding: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header { text-align: center; margin-bottom: 30px; border-bottom: 3px solid #2c3e50; padding-bottom: 20px; }
+        .header h1 { color: #2c3e50; margin: 0; font-size: 2.5em; }
+        .header p { color: #7f8c8d; font-size: 1.2em; margin: 10px 0 0 0; }
+        .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px; }
+        .metric-card { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 10px; text-align: center; }
+        .metric-value { font-size: 2.5em; font-weight: bold; margin-bottom: 5px; }
+        .metric-label { font-size: 1em; opacity: 0.9; }
+        .chart-container { margin: 30px 0; background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .chart-title { font-size: 1.5em; color: #2c3e50; margin-bottom: 15px; text-align: center; }
+        .goal-tracker { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 25px; border-radius: 10px; margin: 20px 0; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 10px 0; overflow: hidden; }
+        .progress-fill { background: #27ae60; height: 100%; border-radius: 10px; transition: width 0.3s ease; }
+        .insights { background: #ecf0f1; border-left: 5px solid #3498db; padding: 20px; margin: 20px 0; border-radius: 5px; }
+        .problem-pattern { background: #fdf2f2; border-left: 5px solid #e74c3c; padding: 15px; margin: 10px 0; border-radius: 5px; }
+        .success-pattern { background: #f0fff4; border-left: 5px solid #27ae60; padding: 15px; margin: 10px 0; border-radius: 5px; }
+        .timestamp { font-size: 0.9em; color: #7f8c8d; text-align: center; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧾 Legacy Reimbursement System</h1>
+            <p>Live Reverse Engineering Dashboard - 60-Year-Old Black Box Challenge</p>
+            <div class="timestamp">Last updated: 2025-06-07 14:32:15</div>
+        </div>
+        
+        <div class="goal-tracker">
+            <h2>🎯 Challenge Goal: Extremely High Fidelity</h2>
+            <div style="background: rgba(255,255,255,0.2); border-radius: 10px; padding: 15px; margin: 15px 0;">
+                <strong>Target:</strong> 1,000 exact matches (±$0.01) | <strong>Current:</strong> 0 exact matches
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0.0%"></div>
+                </div>
+                <p>Progress: 0.0% toward perfect replication</p>
+            </div>
+        </div>
+        
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-value">17.77</div>
+                <div class="metric-label">Average Error ($)</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">0</div>
+                <div class="metric-label">Exact Matches</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">45</div>
+                <div class="metric-label">Close Matches (±$1)</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">1877</div>
+                <div class="metric-label">Score (lower better)</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">12</div>
+                <div class="metric-label">Attempt #</div>
+            </div>
+        </div>
+        
+        <div class="chart-container">
+            <div class="chart-title">📈 Algorithm Progress Over Time (Live Data)</div>
+            <div id="progress-chart"></div>
+        </div>
+        
+        <div class="chart-container">
+            <div class="chart-title">🎯 Error Distribution Analysis</div>
+            <div id="error-distribution"></div>
+        </div>
+        
+        <div class="chart-container">
+            <div class="chart-title">🔍 Expected vs Predicted Scatter Plot</div>
+            <div id="scatter-plot"></div>
+        </div>
+        
+        <div class="insights">
+            <h3>🚨 Current Status Assessment</h3>
+            
+            <div class="problem-pattern">
+                <strong>Zero Exact Matches - Critical Issue</strong><br>
+                We're not achieving the "extremely high fidelity" requirement. Need to focus on exact replication rather than just minimizing average error.
+            </div>
+            
+            <div class="problem-pattern">
+                <strong>High Error on Long Trips</strong><br>
+                Cases with 8+ days still showing high errors. Our vacation penalty logic needs refinement.
+            </div>
+            
+            <div class="success-pattern">
+                <strong>Some Targeted Improvements Working</strong><br>
+                Fixed several 1-day high-mileage cases, but overall average error increased slightly.
+            </div>
+        </div>
+        
+        <div class="insights">
+            <h3>🎯 Next Priority Actions</h3>
+            <ol>
+                <li><strong>Focus on exact matches:</strong> Analyze the closest cases to understand what makes them work</li>
+                <li><strong>Reverse engineer specific patterns:</strong> Look for mathematical relationships in successful cases</li>
+                <li><strong>Test incremental changes:</strong> Make smaller, more targeted adjustments</li>
+                <li><strong>Analyze rounding behavior:</strong> The legacy system may have specific rounding quirks</li>
+            </ol>
+        </div>
+    </div>
+    
+    <script>
+        const progressData = [{"timestamp": "2025-06-07T13:56:11.727737", "attempt": 11, "avg_error": 230.17, "exact_matches": 0, "close_matches": 3, "score": 23116.75, "total_cases": 1000, "description": "Improved algorithm with efficiency bonuses and targeted fixes"}, {"timestamp": "2025-06-07T14:04:59.635808", "attempt": 11, "avg_error": 225.9, "exact_matches": 1, "close_matches": 7, "score": 22689.78, "total_cases": 1000, "description": "Improved algorithm with efficiency bonuses and targeted fixes"}, {"timestamp": "2025-06-07T14:05:16.581641", "attempt": 12, "avg_error": 225.9, "exact_matches": 1, "close_matches": 7, "score": 22689.78, "total_cases": 1000, "description": "Micro-tuned algorithm with systematic bias correction - FIRST EXACT MATCH!"}, {"timestamp": "2025-06-07T14:30:13.030236", "attempt": 12, "avg_error": 30.08, "exact_matches": 0, "close_matches": 25, "score": 3108.01, "total_cases": 1000, "description": "Micro-tuned algorithm with systematic bias correction - FIRST EXACT MATCH!"}, {"timestamp": "2025-06-07T14:32:15.653109", "attempt": 12, "avg_error": 17.77, "exact_matches": 0, "close_matches": 45, "score": 1877.15, "total_cases": 1000, "description": "Micro-tuned algorithm with systematic bias correction - FIRST EXACT MATCH!"}];
+        const casesData = [{"case_id": 1, "duration": 3, "miles": 93, "receipts": 1.42, "expected": 364.51, "predicted": 373.72207838551316, "error": 9.212078385513166, "miles_per_day": 31.0, "receipts_per_day": 0.47333333333333333}, {"case_id": 2, "duration": 1, "miles": 55, "receipts": 3.6, "expected": 126.06, "predicted": 130.05327847869376, "error": 3.993278478693753, "miles_per_day": 55.0, "receipts_per_day": 3.6}, {"case_id": 3, "duration": 1, "miles": 47, "receipts": 17.97, "expected": 128.91, "predicted": 142.03822802212068, "error": 13.12822802212068, "miles_per_day": 47.0, "receipts_per_day": 17.97}, {"case_id": 4, "duration": 2, "miles": 13, "receipts": 4.67, "expected": 203.52, "predicted": 204.66629321943054, "error": 1.1462932194305324, "miles_per_day": 6.5, "receipts_per_day": 2.335}, {"case_id": 5, "duration": 3, "miles": 88, "receipts": 5.78, "expected": 380.37, "predicted": 375.3914202836403, "error": 4.978579716359718, "miles_per_day": 29.333333333333332, "receipts_per_day": 1.9266666666666667}, {"case_id": 6, "duration": 1, "miles": 76, "receipts": 13.74, "expected": 158.35, "predicted": 162.38249898581628, "error": 4.032498985816289, "miles_per_day": 76.0, "receipts_per_day": 13.74}, {"case_id": 7, "duration": 3, "miles": 41, "receipts": 4.52, "expected": 320.12, "predicted": 317.4594888144309, "error": 2.660511185569078, "miles_per_day": 13.666666666666666, "receipts_per_day": 1.5066666666666666}, {"case_id": 8, "duration": 1, "miles": 140, "receipts": 22.71, "expected": 199.68, "predicted": 194.94848985642162, "error": 4.73151014357839, "miles_per_day": 140.0, "receipts_per_day": 22.71}, {"case_id": 9, "duration": 3, "miles": 121, "receipts": 21.17, "expected": 464.07, "predicted": 419.15020233829557, "error": 44.91979766170442, "miles_per_day": 40.333333333333336, "receipts_per_day": 7.0566666666666675}, {"case_id": 10, "duration": 3, "miles": 117, "receipts": 21.99, "expected": 359.1, "predicted": 362.621828887615, "error": 3.5218288876149586, "miles_per_day": 39.0, "receipts_per_day": 7.329999999999999}, {"case_id": 11, "duration": 2, "miles": 202, "receipts": 21.24, "expected": 356.17, "predicted": 343.7369399740855, "error": 12.433060025914529, "miles_per_day": 101.0, "receipts_per_day": 10.62}, {"case_id": 12, "duration": 3, "miles": 80, "receipts": 21.05, "expected": 366.87, "predicted": 362.89603224461496, "error": 3.973967755385047, "miles_per_day": 26.666666666666668, "receipts_per_day": 7.016666666666667}, {"case_id": 13, "duration": 2, "miles": 21, "receipts": 20.04, "expected": 204.58, "predicted": 209.4330682963022, "error": 4.853068296302183, "miles_per_day": 10.5, "receipts_per_day": 10.02}, {"case_id": 14, "duration": 3, "miles": 177, "receipts": 18.73, "expected": 430.86, "predicted": 410.2258250665916, "error": 20.634174933408417, "miles_per_day": 59.0, "receipts_per_day": 6.243333333333333}, {"case_id": 15, "duration": 1, "miles": 141, "receipts": 10.15, "expected": 195.14, "predicted": 199.0755621056054, "error": 3.9355621056054133, "miles_per_day": 141.0, "receipts_per_day": 10.15}, {"case_id": 16, "duration": 1, "miles": 58, "receipts": 5.86, "expected": 117.24, "predicted": 128.89947630811122, "error": 11.659476308111223, "miles_per_day": 58.0, "receipts_per_day": 5.86}, {"case_id": 17, "duration": 1, "miles": 133, "receipts": 8.34, "expected": 179.06, "predicted": 190.6638790889239, "error": 11.60387908892389, "miles_per_day": 133.0, "receipts_per_day": 8.34}, {"case_id": 18, "duration": 1, "miles": 59, "receipts": 8.31, "expected": 120.65, "predicted": 128.89947630811122, "error": 8.249476308111213, "miles_per_day": 59.0, "receipts_per_day": 8.31}, {"case_id": 19, "duration": 2, "miles": 89, "receipts": 13.85, "expected": 234.2, "predicted": 236.6323153295589, "error": 2.432315329558918, "miles_per_day": 44.5, "receipts_per_day": 6.925}, {"case_id": 20, "duration": 2, "miles": 147, "receipts": 17.43, "expected": 325.56, "predicted": 333.53079270361246, "error": 7.97079270361246, "miles_per_day": 73.5, "receipts_per_day": 8.715}, {"case_id": 21, "duration": 5, "miles": 130, "receipts": 306.9, "expected": 574.1, "predicted": 551.3435382789037, "error": 22.756461721096343, "miles_per_day": 26.0, "receipts_per_day": 61.379999999999995}, {"case_id": 22, "duration": 5, "miles": 173, "receipts": 1337.9, "expected": 1443.96, "predicted": 1427.7953892386831, "error": 16.164610761316908, "miles_per_day": 34.6, "receipts_per_day": 267.58000000000004}, {"case_id": 23, "duration": 5, "miles": 592, "receipts": 433.75, "expected": 869, "predicted": 880.7957997105228, "error": 11.795799710522829, "miles_per_day": 118.4, "receipts_per_day": 86.75}, {"case_id": 24, "duration": 5, "miles": 679, "receipts": 476.08, "expected": 1030.41, "predicted": 1016.5241006025178, "error": 13.885899397482262, "miles_per_day": 135.8, "receipts_per_day": 95.216}, {"case_id": 25, "duration": 5, "miles": 708, "receipts": 1129.52, "expected": 1654.62, "predicted": 1606.2255983928342, "error": 48.39440160716572, "miles_per_day": 141.6, "receipts_per_day": 225.904}, {"case_id": 26, "duration": 5, "miles": 261, "receipts": 464.94, "expected": 621.12, "predicted": 647.9945026967858, "error": 26.87450269678584, "miles_per_day": 52.2, "receipts_per_day": 92.988}, {"case_id": 27, "duration": 5, "miles": 794, "receipts": 511, "expected": 1139.94, "predicted": 1101.801216911709, "error": 38.13878308829112, "miles_per_day": 158.8, "receipts_per_day": 102.2}, {"case_id": 28, "duration": 5, "miles": 521, "receipts": 1448.55, "expected": 1624.01, "predicted": 1623.475363915581, "error": 0.5346360844189348, "miles_per_day": 104.2, "receipts_per_day": 289.71}, {"case_id": 29, "duration": 5, "miles": 595, "receipts": 863.93, "expected": 1231.67, "predicted": 1248.4076237321071, "error": 16.737623732107068, "miles_per_day": 119.0, "receipts_per_day": 172.786}, {"case_id": 30, "duration": 5, "miles": 811, "receipts": 952.39, "expected": 1608.6, "predicted": 1614.2931993411967, "error": 5.69319934119676, "miles_per_day": 162.2, "receipts_per_day": 190.478}, {"case_id": 31, "duration": 5, "miles": 477, "receipts": 704.42, "expected": 1045.96, "predicted": 1042.248536886521, "error": 3.7114631134791125, "miles_per_day": 95.4, "receipts_per_day": 140.884}, {"case_id": 32, "duration": 5, "miles": 730, "receipts": 485.73, "expected": 991.49, "predicted": 973.5343592310631, "error": 17.95564076893686, "miles_per_day": 146.0, "receipts_per_day": 97.146}, {"case_id": 33, "duration": 5, "miles": 262, "receipts": 1173.79, "expected": 1485.59, "predicted": 1463.6582129610401, "error": 21.931787038959783, "miles_per_day": 52.4, "receipts_per_day": 234.75799999999998}, {"case_id": 34, "duration": 5, "miles": 446, "receipts": 219.98, "expected": 788.62, "predicted": 789.0090794316953, "error": 0.3890794316953361, "miles_per_day": 89.2, "receipts_per_day": 43.995999999999995}, {"case_id": 35, "duration": 5, "miles": 751, "receipts": 407.43, "expected": 1063.46, "predicted": 1002.2342806628635, "error": 61.225719337136525, "miles_per_day": 150.2, "receipts_per_day": 81.486}, {"case_id": 36, "duration": 5, "miles": 324, "receipts": 128.94, "expected": 686.54, "predicted": 702.9917256791725, "error": 16.45172567917257, "miles_per_day": 64.8, "receipts_per_day": 25.788}, {"case_id": 37, "duration": 5, "miles": 414, "receipts": 967, "expected": 1368.94, "predicted": 1329.0806915524695, "error": 39.859308447530566, "miles_per_day": 82.8, "receipts_per_day": 193.4}, {"case_id": 38, "duration": 5, "miles": 367, "receipts": 290.78, "expected": 742.25, "predicted": 757.8708190911807, "error": 15.620819091180692, "miles_per_day": 73.4, "receipts_per_day": 58.15599999999999}, {"case_id": 39, "duration": 5, "miles": 764, "receipts": 848.75, "expected": 1468.46, "predicted": 1453.5569394513848, "error": 14.903060548615258, "miles_per_day": 152.8, "receipts_per_day": 169.75}, {"case_id": 40, "duration": 5, "miles": 249, "receipts": 873.75, "expected": 1185.24, "predicted": 1173.934839106801, "error": 11.305160893198945, "miles_per_day": 49.8, "receipts_per_day": 174.75}, {"case_id": 41, "duration": 8, "miles": 862, "receipts": 1817.85, "expected": 1719.37, "predicted": 1770.5291233123567, "error": 51.15912331235677, "miles_per_day": 107.75, "receipts_per_day": 227.23125}, {"case_id": 42, "duration": 11, "miles": 927, "receipts": 1994.33, "expected": 1779.12, "predicted": 1804.1703656791658, "error": 25.050365679165907, "miles_per_day": 84.27272727272727, "receipts_per_day": 181.30272727272725}, {"case_id": 43, "duration": 9, "miles": 602, "receipts": 186.69, "expected": 1085.4, "predicted": 1053.3366119076695, "error": 32.06338809233057, "miles_per_day": 66.88888888888889, "receipts_per_day": 20.743333333333332}, {"case_id": 44, "duration": 8, "miles": 610, "receipts": 208.29, "expected": 841.27, "predicted": 853.847426298754, "error": 12.577426298754062, "miles_per_day": 76.25, "receipts_per_day": 26.03625}, {"case_id": 45, "duration": 12, "miles": 333, "receipts": 1103.21, "expected": 1618.13, "predicted": 1627.6819404834612, "error": 9.551940483461067, "miles_per_day": 27.75, "receipts_per_day": 91.93416666666667}, {"case_id": 46, "duration": 8, "miles": 435, "receipts": 1129.65, "expected": 1525.26, "predicted": 1494.0779665614605, "error": 31.18203343853952, "miles_per_day": 54.375, "receipts_per_day": 141.20625}, {"case_id": 47, "duration": 9, "miles": 218, "receipts": 1203.45, "expected": 1561.63, "predicted": 1535.9174441832977, "error": 25.712555816702434, "miles_per_day": 24.22222222222222, "receipts_per_day": 133.71666666666667}, {"case_id": 48, "duration": 12, "miles": 781, "receipts": 1159.18, "expected": 1752.72, "predicted": 1772.4606458999813, "error": 19.740645899981246, "miles_per_day": 65.08333333333333, "receipts_per_day": 96.59833333333334}, {"case_id": 49, "duration": 11, "miles": 916, "receipts": 1036.91, "expected": 2098.07, "predicted": 2060.1690610178757, "error": 37.900938982124444, "miles_per_day": 83.27272727272727, "receipts_per_day": 94.26454545454546}, {"case_id": 50, "duration": 10, "miles": 358, "receipts": 2066.62, "expected": 1624.11, "predicted": 1606.7182485910105, "error": 17.39175140898942, "miles_per_day": 35.8, "receipts_per_day": 206.66199999999998}, {"case_id": 51, "duration": 12, "miles": 566, "receipts": 2013.7, "expected": 1752.03, "predicted": 1760.1440154929323, "error": 8.114015492932367, "miles_per_day": 47.166666666666664, "receipts_per_day": 167.80833333333334}, {"case_id": 52, "duration": 9, "miles": 954, "receipts": 1483.39, "expected": 2024.2, "predicted": 1975.675492887241, "error": 48.52450711275901, "miles_per_day": 106.0, "receipts_per_day": 164.82111111111112}, {"case_id": 53, "duration": 9, "miles": 534, "receipts": 1929.94, "expected": 1624.87, "predicted": 1621.9527165772008, "error": 2.9172834227990734, "miles_per_day": 59.333333333333336, "receipts_per_day": 214.4377777777778}, {"case_id": 54, "duration": 12, "miles": 765, "receipts": 1343.97, "expected": 1953.03, "predicted": 1925.0305276891609, "error": 27.99947231083911, "miles_per_day": 63.75, "receipts_per_day": 111.9975}, {"case_id": 55, "duration": 8, "miles": 630, "receipts": 967.69, "expected": 1388.05, "predicted": 1404.964730924524, "error": 16.914730924524065, "miles_per_day": 78.75, "receipts_per_day": 120.96125}, {"case_id": 56, "duration": 10, "miles": 909, "receipts": 696, "expected": 1505.19, "predicted": 1528.5986636825169, "error": 23.408663682516817, "miles_per_day": 90.9, "receipts_per_day": 69.6}, {"case_id": 57, "duration": 10, "miles": 223, "receipts": 745.89, "expected": 1037.45, "predicted": 1066.3827054185617, "error": 28.93270541856168, "miles_per_day": 22.3, "receipts_per_day": 74.589}, {"case_id": 58, "duration": 8, "miles": 467, "receipts": 1178.71, "expected": 1483.33, "predicted": 1480.8938832327437, "error": 2.4361167672561805, "miles_per_day": 58.375, "receipts_per_day": 147.33875}, {"case_id": 59, "duration": 9, "miles": 708, "receipts": 461.07, "expected": 1110.6, "predicted": 1091.4201573136709, "error": 19.17984268632904, "miles_per_day": 78.66666666666667, "receipts_per_day": 51.23}, {"case_id": 60, "duration": 9, "miles": 885, "receipts": 1764.97, "expected": 1694.37, "predicted": 1737.3578372160596, "error": 42.98783721605969, "miles_per_day": 98.33333333333333, "receipts_per_day": 196.10777777777778}, {"case_id": 61, "duration": 6, "miles": 855, "receipts": 591.35, "expected": 1339.72, "predicted": 1318.0059575311827, "error": 21.714042468817297, "miles_per_day": 142.5, "receipts_per_day": 98.55833333333334}, {"case_id": 62, "duration": 2, "miles": 993, "receipts": 54.24, "expected": 715.19, "predicted": 695.9451445541819, "error": 19.24485544581819, "miles_per_day": 496.5, "receipts_per_day": 27.12}, {"case_id": 63, "duration": 5, "miles": 685, "receipts": 747.14, "expected": 1216.36, "predicted": 1238.8801175063984, "error": 22.520117506398492, "miles_per_day": 137.0, "receipts_per_day": 149.428}, {"case_id": 64, "duration": 3, "miles": 981, "receipts": 341.45, "expected": 813.95, "predicted": 787.5382424807357, "error": 26.41175751926437, "miles_per_day": 327.0, "receipts_per_day": 113.81666666666666}, {"case_id": 65, "duration": 5, "miles": 770, "receipts": 873.33, "expected": 1502.49, "predicted": 1470.9187969379245, "error": 31.571203062075483, "miles_per_day": 154.0, "receipts_per_day": 174.666}, {"case_id": 66, "duration": 6, "miles": 697, "receipts": 651.64, "expected": 1237.71, "predicted": 1234.4776714676527, "error": 3.23232853234731, "miles_per_day": 116.16666666666667, "receipts_per_day": 108.60666666666667}, {"case_id": 67, "duration": 3, "miles": 795, "receipts": 450.85, "expected": 743.94, "predicted": 761.6395446666713, "error": 17.699544666671272, "miles_per_day": 265.0, "receipts_per_day": 150.28333333333333}, {"case_id": 68, "duration": 3, "miles": 606, "receipts": 1184.23, "expected": 1364.54, "predicted": 1382.511050818473, "error": 17.97105081847303, "miles_per_day": 202.0, "receipts_per_day": 394.74333333333334}, {"case_id": 69, "duration": 3, "miles": 842, "receipts": 865.37, "expected": 1251.14, "predicted": 1221.8973109000804, "error": 29.242689099919744, "miles_per_day": 280.6666666666667, "receipts_per_day": 288.45666666666665}, {"case_id": 70, "duration": 7, "miles": 748, "receipts": 241.73, "expected": 971.31, "predicted": 1008.1907990923169, "error": 36.88079909231692, "miles_per_day": 106.85714285714286, "receipts_per_day": 34.53285714285714}, {"case_id": 71, "duration": 7, "miles": 624, "receipts": 148.16, "expected": 905.79, "predicted": 897.8153468440767, "error": 7.974653155923306, "miles_per_day": 89.14285714285714, "receipts_per_day": 21.165714285714284}, {"case_id": 72, "duration": 2, "miles": 713, "receipts": 740.33, "expected": 1048.28, "predicted": 1007.4027621764864, "error": 40.87723782351361, "miles_per_day": 356.5, "receipts_per_day": 370.165}, {"case_id": 73, "duration": 3, "miles": 874, "receipts": 1191.4, "expected": 1515.99, "predicted": 1511.1190296122893, "error": 4.870970387710713, "miles_per_day": 291.3333333333333, "receipts_per_day": 397.1333333333334}, {"case_id": 74, "duration": 6, "miles": 761, "receipts": 530.19, "expected": 1120.1, "predicted": 1121.1342274235963, "error": 1.0342274235963487, "miles_per_day": 126.83333333333333, "receipts_per_day": 88.36500000000001}, {"case_id": 75, "duration": 1, "miles": 815, "receipts": 97.89, "expected": 539.36, "predicted": 544.2259351956703, "error": 4.865935195670318, "miles_per_day": 815.0, "receipts_per_day": 97.89}, {"case_id": 76, "duration": 1, "miles": 601, "receipts": 497.7, "expected": 644.12, "predicted": 640.4965964673113, "error": 3.6234035326887124, "miles_per_day": 601.0, "receipts_per_day": 497.7}, {"case_id": 77, "duration": 7, "miles": 817, "receipts": 1127.87, "expected": 1809.91, "predicted": 1822.2497916949992, "error": 12.339791694999121, "miles_per_day": 116.71428571428571, "receipts_per_day": 161.1242857142857}, {"case_id": 78, "duration": 1, "miles": 606, "receipts": 923, "expected": 1050.05, "predicted": 1062.8304616781802, "error": 12.780461678180245, "miles_per_day": 606.0, "receipts_per_day": 923.0}, {"case_id": 79, "duration": 1, "miles": 909, "receipts": 741.82, "expected": 866.07, "predicted": 862.0381017049808, "error": 4.031898295019232, "miles_per_day": 909.0, "receipts_per_day": 741.82}, {"case_id": 80, "duration": 3, "miles": 624, "receipts": 1160.92, "expected": 1459.34, "predicted": 1446.2722951000576, "error": 13.067704899942328, "miles_per_day": 208.0, "receipts_per_day": 386.97333333333336}, {"case_id": 81, "duration": 4, "miles": 650, "receipts": 619.49, "expected": 676.38, "predicted": 717.2235151181139, "error": 40.84351511811394, "miles_per_day": 162.5, "receipts_per_day": 154.8725}, {"case_id": 82, "duration": 6, "miles": 204, "receipts": 818.99, "expected": 628.4, "predicted": 697.3077638795108, "error": 68.90776387951087, "miles_per_day": 34.0, "receipts_per_day": 136.49833333333333}, {"case_id": 83, "duration": 1, "miles": 263, "receipts": 396.49, "expected": 198.42, "predicted": 237.71524918864742, "error": 39.29524918864743, "miles_per_day": 263.0, "receipts_per_day": 396.49}, {"case_id": 84, "duration": 1, "miles": 451, "receipts": 555.49, "expected": 162.18, "predicted": 195.0647560515158, "error": 32.88475605151578, "miles_per_day": 451.0, "receipts_per_day": 555.49}, {"case_id": 85, "duration": 10, "miles": 424, "receipts": 474.99, "expected": 831.96, "predicted": 858.9117910168399, "error": 26.95179101683982, "miles_per_day": 42.4, "receipts_per_day": 47.499}, {"case_id": 86, "duration": 2, "miles": 565, "receipts": 389.49, "expected": 415.96, "predicted": 457.07807574460713, "error": 41.118075744607154, "miles_per_day": 282.5, "receipts_per_day": 194.745}, {"case_id": 87, "duration": 9, "miles": 397, "receipts": 348.49, "expected": 913.29, "predicted": 909.6272099448271, "error": 3.662790055172877, "miles_per_day": 44.111111111111114, "receipts_per_day": 38.721111111111114}, {"case_id": 88, "duration": 1, "miles": 532, "receipts": 413.99, "expected": 355.57, "predicted": 348.93592988232126, "error": 6.634070117678732, "miles_per_day": 532.0, "receipts_per_day": 413.99}, {"case_id": 89, "duration": 2, "miles": 384, "receipts": 495.49, "expected": 290.36, "predicted": 327.3687266239595, "error": 37.00872662395949, "miles_per_day": 192.0, "receipts_per_day": 247.745}, {"case_id": 90, "duration": 5, "miles": 754, "receipts": 489.99, "expected": 765.13, "predicted": 832.1921303517364, "error": 67.06213035173641, "miles_per_day": 150.8, "receipts_per_day": 97.998}, {"case_id": 91, "duration": 1, "miles": 344.46, "receipts": 813.85, "expected": 707.88, "predicted": 695.4216103829687, "error": 12.458389617031344, "miles_per_day": 344.46, "receipts_per_day": 813.85}, {"case_id": 92, "duration": 3, "miles": 906.3, "receipts": 540.03, "expected": 848.42, "predicted": 839.1901968998229, "error": 9.229803100177037, "miles_per_day": 302.09999999999997, "receipts_per_day": 180.01}, {"case_id": 93, "duration": 3, "miles": 1007.56, "receipts": 187.52, "expected": 764.64, "predicted": 769.0616884038587, "error": 4.421688403858752, "miles_per_day": 335.8533333333333, "receipts_per_day": 62.50666666666667}, {"case_id": 94, "duration": 1, "miles": 359.62, "receipts": 221.15, "expected": 255.57, "predicted": 285.4065799347762, "error": 29.836579934776182, "miles_per_day": 359.62, "receipts_per_day": 221.15}, {"case_id": 95, "duration": 1, "miles": 362.79, "receipts": 749.19, "expected": 636.51, "predicted": 646.5091835023741, "error": 9.99918350237408, "miles_per_day": 362.79, "receipts_per_day": 749.19}, {"case_id": 96, "duration": 1, "miles": 288.72, "receipts": 159.26, "expected": 303.94, "predicted": 295.9178068690057, "error": 8.02219313099431, "miles_per_day": 288.72, "receipts_per_day": 159.26}, {"case_id": 97, "duration": 2, "miles": 782.17, "receipts": 830.72, "expected": 1165.44, "predicted": 1174.756610374679, "error": 9.31661037467893, "miles_per_day": 391.085, "receipts_per_day": 415.36}, {"case_id": 98, "duration": 2, "miles": 623.18, "receipts": 347.54, "expected": 625.15, "predicted": 612.9524001961925, "error": 12.19759980380752, "miles_per_day": 311.59, "receipts_per_day": 173.77}, {"case_id": 99, "duration": 3, "miles": 1061.15, "receipts": 388.5, "expected": 693.36, "predicted": 720.9128436599091, "error": 27.55284365990906, "miles_per_day": 353.7166666666667, "receipts_per_day": 129.5}, {"case_id": 100, "duration": 1, "miles": 252.75, "receipts": 285.5, "expected": 331.74, "predicted": 316.9265950713083, "error": 14.813404928691682, "miles_per_day": 252.75, "receipts_per_day": 285.5}];
+        
+        // Progress chart with real data
+        Plotly.newPlot('progress-chart', [{
+            x: progressData.map(d => d.attempt),
+            y: progressData.map(d => d.avg_error),
+            type: 'scatter',
+            mode: 'lines+markers',
+            name: 'Average Error',
+            line: {color: '#e74c3c', width: 3},
+            marker: {size: 8},
+            text: progressData.map(d => d.description),
+            hovertemplate: 'Attempt %{x}<br>Error: $%{y:.2f}<br>%{text}<extra></extra>'
+        }, {
+            x: progressData.map(d => d.attempt),
+            y: progressData.map(d => d.close_matches),
+            type: 'scatter',
+            mode: 'lines+markers',
+            name: 'Close Matches',
+            yaxis: 'y2',
+            line: {color: '#27ae60', width: 3},
+            marker: {size: 8},
+            hovertemplate: 'Attempt %{x}<br>Close Matches: %{y}<extra></extra>'
+        }], {
+            title: 'Real Algorithm Performance Over Time',
+            xaxis: {title: 'Attempt Number'},
+            yaxis: {title: 'Average Error ($)', side: 'left'},
+            yaxis2: {title: 'Close Matches', side: 'right', overlaying: 'y'},
+            hovermode: 'x unified'
+        });
+        
+        // Error distribution
+        const errorData = casesData.map(d => d.error);
+        Plotly.newPlot('error-distribution', [{
+            x: errorData,
+            type: 'histogram',
+            nbinsx: 30,
+            marker: {color: '#3498db', opacity: 0.7}
+        }], {
+            title: 'Distribution of Prediction Errors (Sample)',
+            xaxis: {title: 'Error Amount ($)'},
+            yaxis: {title: 'Number of Cases'}
+        });
+        
+        // Scatter plot
+        const expectedData = casesData.map(d => d.expected);
+        const predictedData = casesData.map(d => d.predicted);
+        const maxVal = Math.max(...expectedData, ...predictedData);
+        
+        Plotly.newPlot('scatter-plot', [{
+            x: expectedData,
+            y: predictedData,
+            mode: 'markers',
+            type: 'scatter',
+            marker: {
+                size: 6,
+                color: errorData,
+                colorscale: 'Reds',
+                colorbar: {title: 'Error ($)'}
+            },
+            text: casesData.map(d => `Case ${d.case_id}: ${d.duration}d, ${d.miles}mi`),
+            hovertemplate: '%{text}<br>Expected: $%{x:.2f}<br>Predicted: $%{y:.2f}<extra></extra>'
+        }, {
+            x: [0, maxVal],
+            y: [0, maxVal],
+            mode: 'lines',
+            type: 'scatter',
+            line: {color: 'red', dash: 'dash'},
+            name: 'Perfect Prediction'
+        }], {
+            title: 'Expected vs Predicted Reimbursements (Sample)',
+            xaxis: {title: 'Expected Reimbursement ($)'},
+            yaxis: {title: 'Predicted Reimbursement ($)'}
+        });
+    </script>
+</body>
+</html>

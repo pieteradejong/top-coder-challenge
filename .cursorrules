@@ -1,0 +1,49 @@
+- let's set things up to optimize development iteration speed: for any change we
+should be able to immediately see whether we are improving.
+
+# Reverse Engineering Challenge Optimization Rules
+
+## Core Approach
+- This is a BLACK BOX reverse-engineering challenge - we must infer the algorithm from 1,000 input/output examples
+- Focus on DATA-DRIVEN insights rather than trying to implement business rules directly
+- Prioritize RAPID ITERATION: every change should be immediately testable with ./eval.sh
+
+## Development Workflow
+1. **Analyze First**: Use data analysis scripts to understand patterns before coding
+2. **Test Immediately**: After every algorithm change, run ./eval.sh to see impact
+3. **Document Everything**: Update WORKING_DOCUMENT.md with findings, decisions, and results
+4. **Iterate Fast**: Make small, targeted changes rather than large rewrites
+
+## Key Success Metrics (in order of priority)
+1. **Average Error**: Primary metric - lower is better
+2. **Close Matches (±$1.00)**: Secondary metric for near-misses
+3. **Exact Matches**: Tertiary metric - nice to have but not essential initially
+
+## Algorithm Development Strategy
+- Start with simple models and add complexity incrementally
+- Use the strong inverse relationship between trip duration and per-day rates as foundation
+- Implement tiered structures for mileage and receipts (confirmed pattern)
+- Add caps and penalties conservatively based on extreme case analysis
+- Test each component's impact separately when possible
+- **COMPLETED**: 15+ diverse approaches tested (12 individual + 3 ensemble)
+- **COMPLETED**: 8 advanced ML approaches tested (Gradient Boosting = best with 89% improvement)
+- **BREAKTHROUGH ACHIEVED**: 68 exact matches, $0.10 MAE, 94.5% score improvement
+- **CURRENT PHASE**: Further optimization, ensemble methods, neural networks when dependencies resolved
+
+## Data Analysis Priorities
+- Focus on outliers and extreme cases - they reveal the fraud prevention logic
+- Look for systematic patterns in the per-day rates by trip duration
+- Analyze efficiency ratios (miles/day, receipts/day) for bonus/penalty triggers
+- Investigate the interview hints: 5-day bonuses, efficiency sweet spots, vacation penalties
+
+## Code Organization
+- Keep calculate_reimbursement.py as the main algorithm
+- Use separate analysis scripts for pattern discovery
+- Maintain run.sh as the interface for evaluation
+- Update WORKING_DOCUMENT.md after each significant finding or algorithm change
+
+## Testing Philosophy
+- Every hypothesis should be testable with the evaluation script
+- Document both successful improvements AND failed attempts
+- Use the 1,000 test cases as ground truth - they contain all the business logic we need to discover
+

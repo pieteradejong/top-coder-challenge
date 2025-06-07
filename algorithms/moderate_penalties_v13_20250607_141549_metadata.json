@@ -1,0 +1,13 @@
+{
+  "variant_name": "moderate_penalties_v13",
+  "description": "Current best with moderate penalties - Score 16,922",
+  "timestamp": "2025-06-07T14:15:49.019318",
+  "filename": "moderate_penalties_v13_20250607_141549.py",
+  "filepath": "algorithms/moderate_penalties_v13_20250607_141549.py",
+  "performance": {
+    "score": 16922,
+    "avg_error": 168.22,
+    "exact_matches": 0,
+    "close_matches": 9
+  }
+}

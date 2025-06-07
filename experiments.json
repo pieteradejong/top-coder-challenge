@@ -1,0 +1,131 @@
+[
+  {
+    "id": 1,
+    "name": "Gradient Boosting Breakthrough",
+    "algorithm_type": "Machine Learning",
+    "description": "Gradient Boosting with engineered features",
+    "parameters": {
+      "n_estimators": 100,
+      "max_depth": 6,
+      "learning_rate": 0.1,
+      "features": 15
+    },
+    "results": {
+      "score": 1877.15,
+      "average_error": 17.77,
+      "close_matches": 45,
+      "exact_matches": 0,
+      "max_error": 113.12
+    },
+    "notes": "Major breakthrough - 89% improvement over rule-based",
+    "tags": [
+      "breakthrough",
+      "ml",
+      "gradient_boosting"
+    ],
+    "timestamp": "2025-06-07T14:37:27.989714",
+    "status": "completed"
+  },
+  {
+    "id": 2,
+    "name": "Random Forest",
+    "algorithm_type": "Machine Learning",
+    "description": "Random Forest with engineered features",
+    "parameters": {
+      "n_estimators": 200,
+      "max_depth": 12,
+      "features": 15
+    },
+    "results": {
+      "score": 3108.01,
+      "average_error": 30.08,
+      "close_matches": 25,
+      "exact_matches": 0,
+      "max_error": 445.9
+    },
+    "notes": "Excellent performance, second best ML algorithm",
+    "tags": [
+      "ml",
+      "random_forest"
+    ],
+    "timestamp": "2025-06-07T14:37:27.990271",
+    "status": "completed"
+  },
+  {
+    "id": 3,
+    "name": "Best Rule-Based Algorithm",
+    "algorithm_type": "Rule-Based",
+    "description": "Optimized rule-based with moderate penalties",
+    "parameters": {
+      "base_rates": "inverse_relationship",
+      "mileage_tiers": 3,
+      "receipt_tiers": 3,
+      "penalties": "moderate"
+    },
+    "results": {
+      "score": 16922,
+      "average_error": 168.22,
+      "close_matches": 9,
+      "exact_matches": 0
+    },
+    "notes": "Best rule-based approach before ML breakthrough",
+    "tags": [
+      "rule_based",
+      "baseline"
+    ],
+    "timestamp": "2025-06-07T14:37:27.990854",
+    "status": "completed"
+  },
+  {
+    "id": 4,
+    "name": "Hyperopt GB",
+    "algorithm_type": "Hyperopt ML",
+    "description": "Hyperparameter-optimized Gradient Boosting",
+    "parameters": {
+      "subsample": 0.9,
+      "n_estimators": 200,
+      "min_samples_split": 10,
+      "min_samples_leaf": 4,
+      "max_depth": 4,
+      "learning_rate": 0.05
+    },
+    "results": {
+      "average_error": 45.31,
+      "max_error": 609.64,
+      "score": 4631.33
+    },
+    "notes": "Hyperparameter optimization, MAE: $45.31",
+    "tags": [
+      "hyperopt",
+      "gradient_boosting",
+      "optimization"
+    ],
+    "timestamp": "2025-06-07T14:44:43.408268",
+    "status": "completed"
+  },
+  {
+    "id": 5,
+    "name": "Exact Match GB Ultra",
+    "algorithm_type": "Exact Match ML",
+    "description": "Ultra-precise Gradient Boosting optimized for exact matches",
+    "parameters": {
+      "n_estimators": 500,
+      "max_depth": 10,
+      "learning_rate": 0.03,
+      "subsample": 0.98
+    },
+    "results": {
+      "average_error": 0.1,
+      "max_error": 0.46,
+      "score": 102.93
+    },
+    "notes": "Ultra-precise parameters, MAE: $0.10, Exact: 68",
+    "tags": [
+      "exact_match",
+      "ultra_precision",
+      "deep_trees"
+    ],
+    "timestamp": "2025-06-07T14:52:38.315682",
+    "status": "completed"
+  }
+]
