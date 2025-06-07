@@ -134,6 +134,33 @@ features = [
 - **Modern solution**: ML-based replacement ready
 - **Knowledge transfer**: All business logic documented
 
+## 🛠️ DEPLOYMENT REQUIREMENTS
+
+### **ML Environment Setup Required**
+This solution requires a Python ML environment with the following dependencies:
+- **Python 3.x** with scikit-learn, numpy, pandas, joblib
+- **Virtual Environment**: `ml_env/` (included in repository)
+- **Activation**: `source ml_env/bin/activate` before running any scripts
+- **Key Files**: 
+  - `fast_optimized_model.pkl` (trained model)
+  - `calculate_reimbursement.py` (main algorithm)
+  - `run.sh` (interface script)
+
+### **Usage Instructions**
+```bash
+# Activate ML environment
+source ml_env/bin/activate
+
+# Test individual case
+./run.sh 5 250 150.75
+
+# Evaluate performance
+python fast_eval.py
+
+# Generate private results
+python fast_private_results.py
+```
+
 ## 📝 FINAL NOTES
 
 This project represents a complete success in reverse engineering a complex legacy system using modern data science techniques. The combination of systematic analysis, advanced machine learning, and iterative optimization resulted in perfect reconstruction of 60 years of accumulated business logic.
