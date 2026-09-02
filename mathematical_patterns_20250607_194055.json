@@ -1,0 +1,13 @@
+{
+  "inverse_relationship": {
+    "formula": "per_day_rate = 458.58 / duration + 161.95",
+    "r_squared": 0.3143681715992488,
+    "parameters": {
+      "a": 458.58452441972554,
+      "b": 161.94834901956693
+    },
+    "fit_quality": "poor"
+  },
+  "mileage_tiers": {
+    "tier_rates": {
+      

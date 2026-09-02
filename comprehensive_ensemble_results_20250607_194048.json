@@ -1,0 +1,51 @@
+{
+  "Mathematical Pattern Analysis_error": "'trip_duration_days'",
+  "Multiple Dozen Decision Trees_error": "BaggingRegressor.__init__() got an unexpected keyword argument 'base_estimator'",
+  "voting_uniform": {
+    "cv_mae": 81.04772448118968,
+    "train_mae": 17.825595239695083,
+    "exact_matches": "0",
+    "close_matches": "41",
+    "overfitting_ratio": 4.5467050828523154
+  },
+  "voting_weighted": {
+    "cv_mae": 83.27983662212678,
+    "train_mae": 14.150106115156674,
+    "exact_matches": "0",
+    "close_matches": "45",
+    "overfitting_ratio": 5.885456684520749
+  },
+  "stacking_linear": {
+    "cv_mae": 80.279082139815,
+    "train_mae": 27.527511930321584,
+    "exact_matches": "0",
+    "close_matches": "25",
+    "overfitting_ratio": 2.9163217635876313
+  },
+  "stacking_ridge": {
+    "cv_mae": 80.27908087505705,
+    "train_mae": 27.527510023446485,
+    "exact_matches": "0",
+    "close_matches": "25",
+    "overfitting_ratio": 2.9163219196607155
+  },
+  "stacking_gb": {
+    "cv_mae": 82.32255151642683,
+    "train_mae": 34.9367986645319,
+    "exact_matches": "0",
+    "close_matches": "20",
+    "overfitting_ratio": 2.3563278452298864
+  },
+  "cv_complexity_analysis": {
+    "best_params": {
+      "learning_rate": 0.02,
+      "max_depth": 6,
+      "n_estimators": 750
+    },
+    "cv_mae": 82.0631487603399,
+    "train_mae": 12.357368953780908,
+    "exact_matches": "1",
+    "close_matches": "54",
+    "overfitting_ratio": 6.640826948460703
+  }
+}
